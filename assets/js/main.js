@@ -61,9 +61,59 @@ $(document).ready(function(){
 
 		$("#encuentrame").click(function(){
 			$('#contenedor-info').append('<p>Temperatura: ' + e.currently.temperature + '</p>' + '<p>Humedad: ' + e.currently.humidity + '</p>' + '<p>Indice UV: ' + e.currently.uvIndex + '</p>' + '<p>Presion: ' + e.currently.pressure + '</p>' + '<p>' + e.timezone + '</p>');
-			console.log(e.timezone);
-			console.log(e);
+			
 		})
+
+		var day;
+		switch (new Date().getDay()) {
+			case 0:
+			day = "Sunday";
+			break;
+			case 1:
+			day = "Monday";
+			break;
+			case 2:
+			day = "Tuesday";
+			break;
+			case 3:
+			day = "Wednesday";
+			break;
+			case 4:
+			day = "Thursday";
+			break;
+			case 5:
+			day = "Friday";
+			break;
+			case  6:
+			day = "Saturday";
+		}
+		console.log(day)
+		console.log(new Date())
+		var diaActual = $("#demo").append('<p>' + "Today is " + day + '</p>')
+		console.log(e.timezone);
+			console.log(e);
+
+			if(day == "Sunday"){
+				$('#dias').append('<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>' + '<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>' + '<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>' + '<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>' + '<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>' + '<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>');
+			}
+			if(day == "Monday"){
+				$('#dias').append('<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>' + '<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>' + '<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>' + '<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>' + '<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>' + '<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>');
+			}
+			if(day == "Tuesday"){
+				$('#dias').append('<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>' + '<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>' + '<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>' + '<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>' + '<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>' + '<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>');
+			}
+			if(day == "Wednesday"){
+				$('#dias').append('<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>' + '<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>' + '<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>' + '<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>' + '<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>' + '<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>');
+			}
+			if(day == "Thursday"){
+				$('#dias').append('<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>' + '<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>' + '<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>' + '<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>' + '<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>' + '<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>');
+			}
+			if(day == "Friday"){
+				$('#dias').append('<p>Saturday: ' + e.daily.data[6].temperatureMin + " - " + e.daily.data[6].temperatureMax + '</p>' + '<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>' + '<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>' + '<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>' + '<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>' + '<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>');
+			}
+			if(day == "Saturday"){
+				$('#dias').append('<p>Sunday: ' + e.daily.data[0].temperatureMin + " - " + e.daily.data[0].temperatureMax + '</p>' + '<p>Monday: ' + e.daily.data[1].temperatureMin + " - " + e.daily.data[1].temperatureMax + '</p>' + '<p>Tuesday: ' + e.daily.data[2].temperatureMin + " - " + e.daily.data[2].temperatureMax + '</p>' + '<p>Wednesday: ' + e.daily.data[3].temperatureMin + " - " + e.daily.data[3].temperatureMax + '</p>' + '<p>Thursday: ' + e.daily.data[4].temperatureMin + " - " + e.daily.data[4].temperatureMax + '</p>' + '<p>Friday: ' + e.daily.data[5].temperatureMin + " - " + e.daily.data[5].temperatureMax + '</p>');
+			}
 	})
 	.fail(function() {
 		console.log("error");
@@ -73,3 +123,4 @@ $(document).ready(function(){
 	});
 	
 })
+
